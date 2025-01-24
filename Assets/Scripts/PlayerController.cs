@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public Transform  _bubbleOffset;
     public Animator animator;
     private bool _moving;
+    private bool _canMove = true;
     private GameObject _bubbleInstance;
     [SerializeField] private float speed = 5f;
     private bool is_turned_right = true;
@@ -26,22 +27,40 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-
-        GetInput();
+        if(_canMove == true){
+            Debug.Log("Pode Mober");
+            GetInput();
+        }
         Animate();
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKey(KeyCode.Space)){
+            Debug.Log("Nao pode");
             this.Shoot();
         }   
+        else{
+            _canMove = true;
+        }
     }
 
      private void FixedUpdate() {
-        _rb.velocity = _input * speed;
-        
+        if(_canMove){
+            _rb.velocity = _input * speed;
+
+        }
+        else{
+            _rb.velocity = Vector2.zero;
+        }
+
     }
 
 
-    public void Shoot(){  
+    public void Shoot(){ 
+        _canMove = false; 
+        _input = Vector2.zero;
+        if(Input.GetKeyDown(KeyCode.Space)){
         _bubbleInstance = Instantiate(_bubble,_bubbleOffset.position ,_bubble.transform.rotation);
+
+        }
+        
        
     }
     private void GetInput(){
