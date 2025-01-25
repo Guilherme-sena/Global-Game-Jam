@@ -28,12 +28,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(_canMove == true){
-            Debug.Log("Pode Mober");
             GetInput();
         }
         Animate();
         if(Input.GetKey(KeyCode.Space)){
-            Debug.Log("Nao pode");
             this.Shoot();
         }   
         else{
@@ -57,8 +55,8 @@ public class PlayerController : MonoBehaviour
         _canMove = false; 
         _input = Vector2.zero;
         if(Input.GetKeyDown(KeyCode.Space)){
-        _bubbleInstance = Instantiate(_bubble,_bubbleOffset.position ,_bubble.transform.rotation);
 
+        _bubbleInstance = Instantiate(_bubble,_bubbleOffset.position ,_bubble.transform.rotation);
         }
         
        
