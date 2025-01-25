@@ -1,24 +1,23 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
+using System.Numerics;
 using System.Runtime.CompilerServices;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
+using TMPro;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
     public GameObject _bubble;
+    public Transform  _bubbleOffset;
     public Animator animator;
     private bool _moving;
+    private bool _canMove = true;
     private GameObject _bubbleInstance;
-    [SerializeField] private float _bubbleSpeed;
-    [SerializeField] private Vector3 _bubbleOffset;
     [SerializeField] private float speed = 5f;
+    private bool is_turned_right = true;
     Rigidbody2D _rb;
-    private  Vector2 _input;
+    public  Vector2 _input;
     private float x;
     private float y;
     void Start()
@@ -28,21 +27,39 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-
-        GetInput();
+        if(_canMove == true){
+            GetInput();
+        }
         Animate();
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKey(KeyCode.Space)){
             this.Shoot();
         }   
+        else{
+            _canMove = true;
+        }
     }
 
      private void FixedUpdate() {
-        _rb.velocity = _input * speed;
+        if(_canMove){
+            _rb.velocity = _input * speed;
+
+        }
+        else{
+            _rb.velocity = Vector2.zero;
+        }
+
     }
 
 
-    public void Shoot(){
-        _bubbleInstance = Instantiate(_bubble,transform.position + _bubbleOffset,_bubble.transform.rotation);
+    public void Shoot(){ 
+        _canMove = false; 
+        _input = Vector2.zero;
+        if(Input.GetKeyDown(KeyCode.Space)){
+
+        _bubbleInstance = Instantiate(_bubble,_bubbleOffset.position ,_bubble.transform.rotation);
+        }
+        
+       
     }
     private void GetInput(){
         x = Input.GetAxisRaw("Horizontal");
@@ -52,12 +69,14 @@ public class PlayerController : MonoBehaviour
         
     }
     private void Animate(){
-        if(_input.x < -0.1f){
-            gameObject.transform.localScale = new Vector3(-1,1,1);
+        if(_input.x < -0.1f && is_turned_right == true){
+            gameObject.transform.Rotate(0,180,0);
+            is_turned_right = false;
         }
 
-        if(_input.x > 0.1f){
-            gameObject.transform.localScale = new Vector3(1,1,1);
+        if(_input.x > 0.1f && is_turned_right == false){
+            gameObject.transform.Rotate(0,180,0);
+            is_turned_right = true;
         }
 
         if(_input.magnitude > 0.1f || _input.magnitude < -0.1f){
