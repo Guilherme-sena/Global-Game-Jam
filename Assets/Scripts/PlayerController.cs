@@ -1,19 +1,25 @@
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
-
+using System.Linq;
 public class PlayerController : MonoBehaviour
 {
+    
+    private float _bubbley = 1;
+    private float _bubbleX = 1;
+    public GameObject _bubbleParent;
     public GameObject _bubble;
     public Transform  _bubbleOffset;
     public Animator animator;
+    private Transform lastbubble;
     private bool _moving;
     private bool _canMove = true;
-    private GameObject _bubbleInstance;
     [SerializeField] private float speed = 5f;
     private bool is_turned_right = true;
     Rigidbody2D _rb;
@@ -22,11 +28,16 @@ public class PlayerController : MonoBehaviour
     private float y;
     void Start()
     {
+        
         _rb = GetComponent<Rigidbody2D>();
         
     }
     void Update()
     {
+        if(_bubbleParent.transform.childCount > 0){
+
+        lastbubble = GetLastBubble(_bubbleParent);
+        }
         if(_canMove == true){
             GetInput();
         }
@@ -55,9 +66,12 @@ public class PlayerController : MonoBehaviour
         _canMove = false; 
         _input = Vector2.zero;
         if(Input.GetKeyDown(KeyCode.Space)){
-
-        _bubbleInstance = Instantiate(_bubble,_bubbleOffset.position ,_bubble.transform.rotation);
+           Instantiate(_bubble,_bubbleOffset.position ,_bubble.transform.rotation,parent:_bubbleParent.transform);
+            
         }
+        if(Input.GetKey(KeyCode.Space)){
+                ControllSize(lastbubble);
+            }
         
        
     }
@@ -91,5 +105,15 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Y",y);
         }
         animator.SetBool("moving",_moving);
+    }
+    private void ControllSize(Transform obj){
+        Debug.Log("Func Control");
+        obj.localScale += new Vector3(0.5f * Time.deltaTime,0.5f* Time.deltaTime,1);
+    
+        
+    }
+
+    Transform GetLastBubble(GameObject Parent){
+        return Parent.transform.GetChild(Parent.transform.childCount -1);
     }
 }
