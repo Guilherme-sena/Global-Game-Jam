@@ -13,7 +13,7 @@ public class BubbleController : MonoBehaviour
     void Start()
     {
     }
-    void Update(){
+    public void Update(){
         ControllSize();
         ApplyMovement();
 
@@ -30,7 +30,7 @@ public class BubbleController : MonoBehaviour
     void ApplyMovement(){
 
             if(Input.GetKey(KeyCode.Space) == false){
-                _bubbleInstance.transform.Translate(0f ,transform.position.y * _bubbleSpeed * Time.deltaTime,0f);
+                _bubbleInstance.transform.position += new Vector3(0f ,Mathf.Abs(_bubbleSpeed)*Time.deltaTime,0f);
         
         }
             if(transform.position.y>20){
