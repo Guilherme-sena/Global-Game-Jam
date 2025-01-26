@@ -8,45 +8,59 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using System.Linq;
+using System.IO;
 public class PlayerController : MonoBehaviour
 {
-    
-    private float _bubbley = 1;
-    private float _bubbleX = 1;
-    public GameObject _bubbleParent;
-    public GameObject _bubble;
-    public Transform  _bubbleOffset;
+
     public Animator animator;
-    private Transform lastbubble;
+    private String FireButton = "Fire1";
     private bool _moving;
     private bool _canMove = true;
     [SerializeField] private float speed = 5f;
     private bool is_turned_right = true;
     Rigidbody2D _rb;
+    private List<Transform> last_bubble_instance = new List<Transform>();
+
     public  Vector2 _input;
     private float x;
     private float y;
+    private BubbleController BC;
     void Start()
     {
-        
+        BC = FindObjectOfType<BubbleController>();
         _rb = GetComponent<Rigidbody2D>();
         
     }
-    void Update()
+    private void Update()
     {
-        if(_bubbleParent.transform.childCount > 0){
-
-        lastbubble = GetLastBubble(_bubbleParent);
-        }
         if(_canMove == true){
             GetInput();
         }
         Animate();
-        if(Input.GetKey(KeyCode.Space)){
-            this.Shoot();
+        if(Input.GetButton(FireButton)){
+            _canMove = false;
+            _input = Vector2.zero;
+            //Instancia a bolha 1 vez
+            if(Input.GetButtonDown(FireButton))
+            { 
+                BC.Spawn();
+                if(BC.transform.childCount > 0){
+                    last_bubble_instance.Add(BC.GetLastBubble());  
+
+                }
+            }       
+             if(last_bubble_instance != null){
+            BC.ControllSize(last_bubble_instance.Last());
+            }
         }   
         else{
-            _canMove = true;
+            if(last_bubble_instance.Count >0 ){
+                if(last_bubble_instance.Last() != null){
+                    BC.ApplyMovement(last_bubble_instance.Last());
+                }
+
+            }
+            _canMove = true; 
         }
     }
 
@@ -60,21 +74,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
-
-    public void Shoot(){ 
-        _canMove = false; 
-        _input = Vector2.zero;
-        if(Input.GetKeyDown(KeyCode.Space)){
-           Instantiate(_bubble,_bubbleOffset.position ,_bubble.transform.rotation,parent:_bubbleParent.transform);
-            
-        }
-        if(Input.GetKey(KeyCode.Space)){
-                ControllSize(lastbubble);
-            }
-        
-       
-    }
     private void GetInput(){
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
@@ -82,6 +81,7 @@ public class PlayerController : MonoBehaviour
         _input.Normalize();
         
     }
+    
     private void Animate(){
         if(_input.x < -0.1f && is_turned_right == true){
             gameObject.transform.Rotate(0,180,0);
@@ -106,14 +106,5 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetBool("moving",_moving);
     }
-    private void ControllSize(Transform obj){
-        Debug.Log("Func Control");
-        obj.localScale += new Vector3(0.5f * Time.deltaTime,0.5f* Time.deltaTime,1);
-    
-        
-    }
-
-    Transform GetLastBubble(GameObject Parent){
-        return Parent.transform.GetChild(Parent.transform.childCount -1);
-    }
+ 
 }

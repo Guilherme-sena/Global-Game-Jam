@@ -10,12 +10,6 @@ public class GunController : MonoBehaviour
     public GameObject _player;
     private Vector2 _playerPosition;
     private Vector2 constOffset = new Vector2(0.5f,0f);
-
-    private void Start(){
-
-       
-
-    }
     private void Update(){
          _playerPosition = _player.GetComponent<PlayerController>()._input;
            //If player is moving down, move gun fire point downards

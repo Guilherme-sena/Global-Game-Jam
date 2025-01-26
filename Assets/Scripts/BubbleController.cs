@@ -1,5 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Animations;
+using UnityEditor.Experimental.GraphView;
+using UnityEditor.PackageManager;
 using UnityEditor.Search;
 using UnityEngine;
 
@@ -7,49 +12,66 @@ public class BubbleController : MonoBehaviour
 {
 
     private Transform lastbubble;
+
+    public Transform gun_position;
+    public  GameObject _prefab_bubble;
     [SerializeField] private float _bubbleSpeed;
-    private bool canMove;
-    void Start()
+    void Update(){
+       foreach (Transform child in transform){
+            if(child.gameObject.GetComponent<SpriteRenderer>().enabled == false){
+                child.DetachChildren();
+            }
+            if(child.position.y > 15 && child.transform != null ){
+                Destroy(child.gameObject);
+            }
+       }
+{
+    //child is your child transform
+}
+    }
+    public void ApplyMovement(Transform obj)
     {
-    }
-    public void Update(){
-        ApplyMovement();
-        if(transform.parent.childCount > 0){
-            lastbubble = GetLastBubble(transform.parent);
+        if(obj.transform != null){
+
+            StartCoroutine(MoveToCoroutine(obj, new Vector2(obj.position.x,25), 15));
         }
-
-
+        //obj.Translate(0f ,_bubbleSpeed*Time.deltaTime,0f);
     }
-  
-    void ApplyMovement(){
-            
-            Debug.Log("Func Apply Movement");
-            // if bubble is not the last bubble it moves
-            if(transform != GetLastBubble(transform.parent) && transform.parent.childCount >1){
-                transform.position += new Vector3(0f ,_bubbleSpeed*Time.deltaTime,0f);
+    public Transform GetLastBubble()
+    {
+        return transform.GetChild(transform.childCount -1);
+    }
+    public void ControllSize(Transform obj)
+    {
+        obj.localScale += new Vector3( Time.deltaTime, Time.deltaTime,1);
+    }
+    public void Spawn(){
+        Instantiate(_prefab_bubble,gun_position.position ,_prefab_bubble.transform.rotation,parent:transform);
+        
+    }
+
+    public IEnumerator MoveToCoroutine(Transform targ, Vector3 pos, float dur)
+{
+    float t = 0f;
+
+         Vector3 start = targ.position;
+         Vector3 v = pos - start;
+        while(t < dur)
+        {
+            if(targ.transform == null){
+                yield break;
             }
-            // if bubble is the only bubble it moves when let go of space
-            if(transform.parent.childCount == 1){
-                if(Input.GetKey(KeyCode.Space) == false){
-                    Debug.Log("entei no if");
-                    lastbubble.position += new Vector3( 0f,_bubbleSpeed* Time.deltaTime,0f);
-                    
-                }
-            if(transform == GetLastBubble(transform.parent) && Input.GetKey(KeyCode.Space) == false){
-                 lastbubble.position += new Vector3(0f ,_bubbleSpeed*Time.deltaTime,0f);
-
-            }
-            } 
-            
-
-            if(transform.position.y>20){
-                Destroy(gameObject);
-            }
-
-
+            t += Time.deltaTime * _bubbleSpeed;
+            targ.position = start + v * t / dur;
+            yield return null;
+        
         }
-    Transform GetLastBubble(Transform Parent){
-            return Parent.GetChild(Parent.childCount -1);
-    }
-    }
+        if(targ != null)
+        {
+            targ.position = pos;
+        }
+   
+    
+}
+}
     

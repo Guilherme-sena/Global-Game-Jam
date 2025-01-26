@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 40
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19b39d6f30814fd4f88d4b4dc0ae420b
-      internalID: -1274377031
+      spriteID: b450c067e880939489ce783b15c9a0b4
+      internalID: -1449603584
       vertices: []
       indices: 
       edges: []
@@ -121,9 +121,9 @@ TextureImporter:
       name: mergulhadorAndandoF_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 40
         y: 0
-        width: 32
+        width: 40
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 292e61a30e505b94e90d3029dcae2741
-      internalID: -688002527
+      spriteID: 958ab26b4aec9324ba19ffd5ff2bf1b3
+      internalID: 789094321
       vertices: []
       indices: 
       edges: []
@@ -142,9 +142,9 @@ TextureImporter:
       name: mergulhadorAndandoF_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 80
         y: 0
-        width: 32
+        width: 40
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96a03313347b78844a6e8975ced51c6e
-      internalID: -1031412962
+      spriteID: 08a294046285d294db1e7db6b18b66f6
+      internalID: -1607225556
       vertices: []
       indices: 
       edges: []
@@ -163,9 +163,9 @@ TextureImporter:
       name: mergulhadorAndandoF_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 120
         y: 0
-        width: 32
+        width: 40
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 345c77030d8d1104aa8cfd12d10a8b9b
-      internalID: -1941363216
+      spriteID: 03ad52f36096ff84fae21077127b4c78
+      internalID: 1843365308
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mergulhadorAndandoF_0: -1274377031
-      mergulhadorAndandoF_1: -688002527
-      mergulhadorAndandoF_2: -1031412962
-      mergulhadorAndandoF_3: -1941363216
+      mergulhadorAndandoF_0: -1449603584
+      mergulhadorAndandoF_1: 789094321
+      mergulhadorAndandoF_2: -1607225556
+      mergulhadorAndandoF_3: 1843365308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

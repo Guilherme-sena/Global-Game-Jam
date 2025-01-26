@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0391324a925ac424b89cebec8735bbd4
-      internalID: -183194034
+      spriteID: bb6d44357f7de4041bb11ea5f8a97d91
+      internalID: 1207830794
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86d83be313161b74b9dc5b758147e476
-      internalID: -1000853698
+      spriteID: ccbe9a1bcc3bcd74193b4e462ae79f32
+      internalID: -627179025
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc15fb9c4a1c51c46b19cef0d65c069c
-      internalID: 1706891579
+      spriteID: f0e2966d6236ca64a93a6b46bc157f9b
+      internalID: -2087630412
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61155e800c5a0d7409d9e6a1b7d2a99e
-      internalID: -1693860955
+      spriteID: bf309e70a593c1b4fa8ae0b93fceb42c
+      internalID: -1307329979
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mergulhadorEstaticoF_0: -183194034
-      mergulhadorEstaticoF_1: -1000853698
-      mergulhadorEstaticoF_2: 1706891579
-      mergulhadorEstaticoF_3: -1693860955
+      mergulhadorEstaticoF_0: 1207830794
+      mergulhadorEstaticoF_1: -627179025
+      mergulhadorEstaticoF_2: -2087630412
+      mergulhadorEstaticoF_3: -1307329979
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

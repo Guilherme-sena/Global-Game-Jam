@@ -97,22 +97,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mergulhadorAndandoC_1
+      name: mergulhadorAndandoC_0
       rect:
         serializedVersion: 2
-        x: 32
+        x: 1
         y: 0
-        width: 32
+        width: 39.75
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d53d3e302a75c5443a6533f076a33f25
-      internalID: -541352277
+      spriteID: ab1cfa81158c268449d320ba6869a9fa
+      internalID: -649330767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mergulhadorAndandoC_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 39.75
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b57f402607753a4b8901b8ab94befea
+      internalID: 5412198
       vertices: []
       indices: 
       edges: []
@@ -121,19 +142,19 @@ TextureImporter:
       name: mergulhadorAndandoC_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 79
         y: 0
-        width: 32
+        width: 39.75
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.52589256, y: 0.49999994}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c26d3264222e19c4a935af8d27a3a3d5
-      internalID: -1875870178
+      spriteID: cc10af1b8ce096145a3085ae129bacec
+      internalID: 1606673164
       vertices: []
       indices: 
       edges: []
@@ -142,40 +163,19 @@ TextureImporter:
       name: mergulhadorAndandoC_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 118
         y: 0
-        width: 32
+        width: 39.75
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5541393, y: 0.49999994}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68120404e051ae443be58b252f0e6492
-      internalID: -878988635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mergulhadorAndandoC_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af476620bd3679f489ebf652a21309eb
-      internalID: 1018267094
+      spriteID: b7064e95fe7a72d4d82cacabcb93725e
+      internalID: 789316549
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mergulhadorAndandoC_0: 1018267094
-      mergulhadorAndandoC_1: -541352277
-      mergulhadorAndandoC_2: -1875870178
-      mergulhadorAndandoC_3: -878988635
+      mergulhadorAndandoC_0: -649330767
+      mergulhadorAndandoC_1: 5412198
+      mergulhadorAndandoC_2: 1606673164
+      mergulhadorAndandoC_3: 789316549
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

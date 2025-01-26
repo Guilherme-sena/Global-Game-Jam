@@ -100,10 +100,10 @@ TextureImporter:
       name: mergulhadorEstaticoD_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 11
         y: 0
-        width: 32
-        height: 32
+        width: 29
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 211793b89b22aed4f861f53716fa7b61
-      internalID: -1451424327
+      spriteID: 3613b78ef193b054ab8868de2bb42643
+      internalID: -1816962392
       vertices: []
       indices: 
       edges: []
@@ -121,10 +121,10 @@ TextureImporter:
       name: mergulhadorEstaticoD_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 50
         y: 0
-        width: 32
-        height: 32
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96f7fccf5d1d81e488a9aa32935a3e9a
-      internalID: -1379185199
+      spriteID: a0831afd693809a42b8f7836d1767221
+      internalID: -538210781
       vertices: []
       indices: 
       edges: []
@@ -142,10 +142,10 @@ TextureImporter:
       name: mergulhadorEstaticoD_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 89
         y: 0
-        width: 32
-        height: 32
+        width: 31
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 088b730ecfe3af04da34ee7ef170d905
-      internalID: 625976562
+      spriteID: d50e48bc3b271af49af8b32c739b30d9
+      internalID: -1092041448
       vertices: []
       indices: 
       edges: []
@@ -163,10 +163,10 @@ TextureImporter:
       name: mergulhadorEstaticoD_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 130
         y: 0
-        width: 32
-        height: 32
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9abaf62237f4afd4cbf001fe00c2f296
-      internalID: -2111989398
+      spriteID: 25bf5c617e2e12744ae058d33f58d384
+      internalID: 1158952858
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mergulhadorEstaticoD_0: -1451424327
-      mergulhadorEstaticoD_1: -1379185199
-      mergulhadorEstaticoD_2: 625976562
-      mergulhadorEstaticoD_3: -2111989398
+      mergulhadorEstaticoD_0: -1816962392
+      mergulhadorEstaticoD_1: -538210781
+      mergulhadorEstaticoD_2: -1092041448
+      mergulhadorEstaticoD_3: 1158952858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
