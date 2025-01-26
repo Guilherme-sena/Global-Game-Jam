@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -7,14 +8,11 @@ public class ChangeMusic : MonoBehaviour
 {
     public AudioClip newMusic;
     private AudioController AC;
-    private CameraController CC;
     public Vector2 MinPos;
     public Vector2 MaxPos;
     void Start()
     {
         AC = FindObjectOfType<AudioController>();
-        CC.maxPosition = MaxPos;
-        CC.minPosition = MinPos;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

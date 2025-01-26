@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1033793477084981477, guid: 03ab8e01eca77934cba431f1ab76a089, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 7136624199018752430}
     - target: {fileID: 3977680656950399984, guid: 03ab8e01eca77934cba431f1ab76a089, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -77,3 +81,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03ab8e01eca77934cba431f1ab76a089, type: 3}
+--- !u!82 &7136624199018752430 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2291506643797188038, guid: 03ab8e01eca77934cba431f1ab76a089, type: 3}
+  m_PrefabInstance: {fileID: 8991279164057367656}
+  m_PrefabAsset: {fileID: 0}
