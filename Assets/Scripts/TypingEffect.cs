@@ -8,10 +8,10 @@ public class TypingEffect : MonoBehaviour
 {
      [SerializeField] private float typeWriterSpeed = 30f;
 
-    public Coroutine(string textToType, TMP_Text textLabel)
-    {
-       return StartCoroutine(TypeText(textToType, textLabel));
-    }
+    // public Coroutine(string textToType, TMP_Text textLabel)
+    // {
+    //    return StartCoroutine(TypeText(textToType, textLabel));
+    // }
 
     private IEnumerator TypeText(string textToType, TMP_Text textLabel)
     {
