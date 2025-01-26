@@ -18,11 +18,11 @@ public class DialogueUI : MonoBehaviour
 
   }
 
-  private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
-  {
-    foreach(string dialogue in dialogueObject.Dialogue)
-    {
-      yield return typingEffect.Run(dialogue, textLabel);
-    }
-  }
+  // private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+  // {
+  //   foreach(string dialogue in dialogueObject.Dialogue)
+  //   {
+  //     yield return typingEffect.runInEditMode(dialogue, textLabel);
+  //   }
+  // }
 }
